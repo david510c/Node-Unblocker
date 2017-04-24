@@ -2,10 +2,8 @@ FROM node:alpine
 
 MAINTAINER David Chen <david@davidchen.blog>
 
-RUN app update
-RUN app add git
-RUN git clone https://github.com/david510c/nunblocker.git
-RUN cd /nunblocker && npm install && npm start
+RUN npm install --prefix unblocker -g https://github.com/david510c/nunblocker/tarball/master
 
 EXPOSE 8080
-CMD ["node"]
+
+CMD ["npm", "start", "/unblocker/lib/node_modules/nodeunblocker.com"]
